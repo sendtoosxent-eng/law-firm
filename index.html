@@ -1,667 +1,1868 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Entebbe Associates Advocates - Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Entebbe Associated Advocates | Defining Clarity &amp; Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary-fixed-variant": "#314865",
+          "inverse-on-surface": "#eff1f3",
+          "on-secondary-fixed": "#271900",
+          "on-secondary-fixed-variant": "#5d4200",
+          "on-tertiary": "#ffffff",
+          "primary-fixed-dim": "#b0c8eb",
+          "on-surface": "#191c1e",
+          "on-secondary-container": "#715000",
+          "tertiary-fixed": "#6bff8f",
+          "tertiary-fixed-dim": "#4ae176",
+          "inverse-surface": "#2d3133",
+          "surface-container-lowest": "#ffffff",
+          "secondary-fixed": "#ffdea6",
+          "surface-container-low": "#f2f4f6",
+          "primary": "#000f22",
+          "secondary-container": "#fdc34d",
+          "error": "#ba1a1a",
+          "on-error": "#ffffff",
+          "on-tertiary-container": "#00a148",
+          "tertiary": "#001304",
+          "surface-tint": "#49607e",
+          "primary-fixed": "#d2e4ff",
+          "surface-container-highest": "#e0e3e5",
+          "background": "#f7f9fb",
+          "surface-container": "#eceef0",
+          "inverse-primary": "#b0c8eb",
+          "error-container": "#ffdad6",
+          "on-background": "#191c1e",
+          "surface-variant": "#e0e3e5",
+          "surface-dim": "#d8dadc",
+          "on-surface-variant": "#43474d",
+          "surface-container-high": "#e6e8ea",
+          "on-primary-fixed": "#001c37",
+          "secondary-fixed-dim": "#f7bd48",
+          "on-primary": "#ffffff",
+          "secondary": "#7b5800",
+          "on-tertiary-fixed": "#002109",
+          "on-secondary": "#ffffff",
+          "outline": "#74777e",
+          "surface-bright": "#f7f9fb",
+          "on-primary-container": "#768dad",
+          "primary-container": "#0a2540",
+          "on-error-container": "#93000a",
+          "on-tertiary-fixed-variant": "#005321",
+          "outline-variant": "#c4c6ce",
+          "tertiary-container": "#002b0e",
+          "surface": "#f7f9fb"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        spacing: {
+          base: "8px",
+          gutter: "24px",
+          "section-padding-mobile": "40px",
+          "section-padding-desktop": "80px",
+          "max-width": "1280px"
+        },
+        fontFamily: {
+          "display-lg": ["Playfair Display"],
+          "headline-lg": ["Playfair Display"],
+          "headline-md": ["Playfair Display"],
+          "body-md": ["Inter"],
+          "label-md": ["Inter"],
+          "label-sm": ["Inter"],
+          "body-lg": ["Inter"]
+        },
+        fontSize: {
+          "display-lg": ["56px", { lineHeight: "64px", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "headline-lg": ["40px", { lineHeight: "48px", fontWeight: "700" }],
+          "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+          "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+          "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+          "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .glass-chat { backdrop-filter: blur(12px); background-color: rgba(255,255,255,0.95); border: 1px solid rgba(226,232,240,0.5); }
+  .practice-card:hover .icon-box { transform: scale(1.1); color: #7b5800; }
+  .chat-bubble-in { animation: bubbleIn 0.3s ease forwards; }
+  @keyframes bubbleIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  .typing-dot { animation: typingPulse 1.2s infinite; }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typingPulse { 0%,80%,100% { opacity:.3; transform:scale(0.8); } 40% { opacity:1; transform:scale(1); } }
+  .chat-msg-bot { background:#f2f4f6; border-radius:0 16px 16px 16px; }
+  .chat-msg-user { background:#0a2540; color:#fff; border-radius:16px 16px 0 16px; margin-left:auto; }
+  .team-card-exec { transition: all 0.4s ease; }
+  .team-card-exec:hover { transform: translateY(-6px); }
+  .team-card-exec:hover .team-overlay { opacity:1; }
+  .team-overlay { opacity:0; transition: opacity 0.3s ease; }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:block; }
+  .stat-counter { font-variant-numeric: tabular-nums; }
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+  /* ── TEAM SLIDER ── */
+  .team-slider-track { display:flex; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); will-change:transform; }
+  .team-slide { flex: 0 0 100%; position:relative; }
+  .team-avatar-ring { position:relative; width:160px; height:160px; margin:0 auto; }
+  .team-avatar-ring::before {
+    content:''; position:absolute; inset:-4px; border-radius:50%;
+    background: conic-gradient(#7b5800 0deg, #fdc34d 90deg, #7b5800 180deg, #0a2540 270deg, #7b5800 360deg);
+    animation: ringRotate 6s linear infinite;
+  }
+  .team-avatar-ring::after { content:''; position:absolute; inset:-1px; border-radius:50%; background:white; }
+  @keyframes ringRotate { to { transform: rotate(360deg); } }
+  .team-avatar-ring img { position:relative; z-index:1; width:152px; height:152px; border-radius:50%; object-fit:cover; object-position:top; top:4px; left:4px; }
+  .team-slide-bg { background: linear-gradient(135deg, #000f22 0%, #0a2540 50%, #000f22 100%); }
+  .team-dept-badge { background: rgba(253,195,77,0.15); border:1px solid rgba(253,195,77,0.3); color:#fdc34d; }
+  .team-progress-bar { height:3px; background:rgba(255,255,255,0.15); border-radius:999px; overflow:hidden; }
+  .team-progress-fill { height:100%; background: linear-gradient(90deg,#7b5800,#fdc34d); border-radius:999px; transition:width 0.1s linear; }
+  .team-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.3); transition:all 0.3s ease; cursor:pointer; }
+  .team-dot.active { background:#fdc34d; width:24px; border-radius:4px; }
+  .team-nav-btn { width:48px; height:48px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.05); color:white; display:flex; align-items:center; justify-content:center; transition:all 0.3s; cursor:pointer; }
+  .team-nav-btn:hover { background:rgba(123,88,0,0.4); border-color:#7b5800; }
+  .team-stat-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px; text-align:center; }
+  .expertise-pill { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-size:12px; padding:4px 12px; border-radius:999px; display:inline-block; }
 
-    <link rel="stylesheet" href="css/aos.css">
+  /* ── TESTIMONIAL SLIDER ── */
+  .testi-track { display:flex; transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94); }
+  .testi-slide { flex:0 0 100%; }
+  .testi-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.25); transition:all 0.3s; cursor:pointer; }
+  .testi-dot.active { background:#fdc34d; width:28px; border-radius:4px; }
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    
-	  <nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Entebbe Associated Advocates Logo" class="img-fluid" height="15" width="80"></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> 
-	      </button>
+  /* ── BLOG SECTION ── */
+  .blog-card { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  .blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,15,34,0.12); }
+  .blog-card:hover .blog-img { transform: scale(1.07); }
+  .blog-img { transition: transform 0.6s ease; }
+  .blog-category-badge { font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:4px; }
+  .blog-read-more { position:relative; font-weight:700; color:#7b5800; }
+  .blog-read-more::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#7b5800; transition:width 0.3s ease; }
+  .blog-card:hover .blog-read-more::after { width:100%; }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="abut.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="attrneys.html" class="nav-link">Attorneys</a></li>
-	          <li class="nav-item"><a href="pratice-areas.html" class="nav-link">Practice Areas</a></li>
-	          <li class="nav-item"><a href="cae.html" class="nav-link">Case Studies</a></li>
-	          <li class="nav-item"><a href="blg.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="cotact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta"><a href="#" class="nav-link">Free Consultation</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/office.jpeg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-          <div class="col-md-6 ftco-animate">
-			<img src="images/logo.png" alt="Law Firm" class="img-fluid" height="100" width="200">
-          	<h2 class="subheading">Welcome To Entebbe Associated Advocates</h2>
-          	<h1>Attorneys Fighting For Your 
-						  <span
-						     class="txt-rotate"
-						     data-period="2000"
-						     data-rotate='[ "Freedom.", "Rights.", "Case.", "Custody." ]'></span>
-						</h1>
-            <!-- <h1 class="mb-4">Attorneys Fighting For Your Freedom</h1> -->
-            <!-- <p class="mb-4">We provide expert legal counsel tailored to individuals, businesses, and institutions delivering clarity, protection, and results in complex legal matters.</p> -->
-            <p><a href="tel:+256393100347" class="btn btn-primary mr-md-4 py-2 px-4">speak to an attorney <span class="ion-ios-arrow-forward"></span></a></p>
+<!-- ═══════════════════════════════ TOP NAV ═══════════════════════════════ -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30" id="main-nav">
+  <div class="max-w-[1280px] mx-auto px-6 flex justify-between items-center h-16">
+    <a href="#" class="flex items-center">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwD4AlJB1B2JwhDgq5YZzcHCiXSJiZUjOhoLB-sgKlFXXDo52PEXnwYWGUvsRxk8Ern960cRzDSt0qK-CAv7vyydiXigkfgXbiK7gZkU9yrnCWdCH7uEaLTsTOhRZWohWcs65eRvuDFV00t1Dm_eVWMU-B0H4vHcMrRc7lEj5QrYbuibj9u-__QczOtshN8OzKhABra-FLcVTgNk627cyHDiPkEW1iMQ25H_aHPiwXO848wA9AodqhTkL3xw67khoxcr-_EpY0UQ" alt="Entebbe Associated Advocates Logo" class="h-12 w-auto object-contain">
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md" href="#about">About</a>
+      <a class="nav-link text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md" href="#practice-areas">Practice Areas</a>
+      <a class="nav-link text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md" href="#our-team">Our Team</a>
+      <a class="nav-link text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md" href="#testimonials">Reviews</a>
+      <a class="nav-link text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md" href="#blog">Blog</a>
+      <a class="nav-link text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md" href="#contact">Contact</a>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-secondary transition-all active:scale-95">
+        Consultation
+      </button>
+    </div>
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+      <span class="w-6 h-0.5 bg-primary block transition-all" id="bar1"></span>
+      <span class="w-6 h-0.5 bg-primary block transition-all" id="bar2"></span>
+      <span class="w-6 h-0.5 bg-primary block transition-all" id="bar3"></span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden bg-surface border-t border-outline-variant/30 px-6 py-4 space-y-4">
+    <a href="#about" class="block text-on-surface-variant hover:text-secondary py-2 font-body-md mobile-nav-link">About</a>
+    <a href="#practice-areas" class="block text-on-surface-variant hover:text-secondary py-2 font-body-md mobile-nav-link">Practice Areas</a>
+    <a href="#our-team" class="block text-on-surface-variant hover:text-secondary py-2 font-body-md mobile-nav-link">Our Team</a>
+    <a href="#testimonials" class="block text-on-surface-variant hover:text-secondary py-2 font-body-md mobile-nav-link">Reviews</a>
+    <a href="#blog" class="block text-on-surface-variant hover:text-secondary py-2 font-body-md mobile-nav-link">Blog</a>
+    <a href="#contact" class="block text-on-surface-variant hover:text-secondary py-2 font-body-md mobile-nav-link">Contact</a>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-container text-on-primary px-6 py-3 rounded-lg font-label-md hover:bg-secondary transition-all">
+      Schedule Consultation
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<header class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover" src="images/law-firm.jpg" alt="Kampala legal district skyline">
+    <div class="absolute inset-0 bg-primary/60 backdrop-blur-[2px]"></div>
+  </div>
+  <div class="relative z-10 max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="space-y-8">
+      <div class="inline-block px-4 py-1 border-l-4 border-secondary bg-white/10 backdrop-blur-sm">
+        <span class="font-label-md text-secondary tracking-widest uppercase">Premier Legal Counsel</span>
+      </div>
+      <h1 class="font-display-lg text-display-lg text-white leading-tight">
+        Defining Clarity, Responsiveness, and Results.
+      </h1>
+      <p class="font-body-lg text-body-lg text-primary-fixed max-w-xl">
+        A modern full-service law firm built to provide solution-oriented legal counsel to corporations, developers, and individuals across East Africa.
+      </p>
+      <div class="flex flex-wrap gap-4 pt-4">
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="bg-primary text-white border-2 border-primary px-8 py-4 font-label-md hover:bg-transparent hover:border-secondary transition-all duration-300">
+          Schedule a Consultation
+        </button>
+        <button onclick="document.getElementById('practice-areas').scrollIntoView({behavior:'smooth'})" class="bg-transparent text-white border border-white/30 px-8 py-4 font-label-md hover:bg-white/10 transition-all">
+          View Practice Areas
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════ STATS BAND ═══════════════════════════════ -->
+<section class="bg-primary-container py-12">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="font-display-lg text-4xl md:text-5xl text-white stat-counter" data-target="11">0</div>
+        <p class="font-label-md text-primary-fixed-dim uppercase mt-2">Practice Areas</p>
+      </div>
+      <div>
+        <div class="font-display-lg text-4xl md:text-5xl text-white stat-counter" data-target="200">0</div>
+        <p class="font-label-md text-primary-fixed-dim uppercase mt-2">Cases Handled</p>
+      </div>
+      <div>
+        <div class="font-display-lg text-4xl md:text-5xl text-white stat-counter" data-target="15">0</div>
+        <p class="font-label-md text-primary-fixed-dim uppercase mt-2">Years Combined Exp.</p>
+      </div>
+      <div>
+        <div class="font-display-lg text-4xl md:text-5xl text-white">3</div>
+        <p class="font-label-md text-primary-fixed-dim uppercase mt-2">East African Countries</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-white" id="about">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <h2 class="font-headline-lg text-headline-lg text-primary">A Legacy of Technical Excellence</h2>
+        <div class="w-20 h-1 bg-secondary"></div>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Established in May 2024, Entebbe Associated Advocates emerged as a response to the evolving legal landscape of Uganda and the wider region. Our firm is founded on the principles of precision and responsiveness, bridging the gap between traditional legal wisdom and modern business agility.
+        </p>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          We are committed to providing technical excellence through a client-centered approach. Our team of advocates brings together years of experience in complex litigation, corporate restructuring, and high-value real estate transactions, ensuring every client receives tailored, strategic advice.
+        </p>
+      </div>
+      <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+        <div class="space-y-4 pt-8">
+          <div class="h-48 rounded-xl overflow-hidden shadow-lg">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ZRisuqOdbmfcSs9XcOYmya7zFqDePqJTM9VL_q15SvMIAd9blQQtv7cnmgpjokkbVMGxKl2b7JJnsE44t5YghN9pOXfhrmj7vcHx1qUxJglanHsjoF_7RNod5xsBUiE1owj5X2p5hDXdarYhhhmCCz1RGOCeySWheJWZq6O1WlcRYLTXFSxP3N99PT1gd7P0uKZ6zZD1GnYbb3zk-2lWBAytIMMe-qgHsqkZHoXjse8rxDX2QM0PveBDUVntHinNvmkhilU04Q" alt="Legal books">
+          </div>
+          <div class="bg-secondary-container p-6 rounded-xl">
+            <span class="text-display-lg font-display-lg text-on-secondary-container">11+</span>
+            <p class="font-label-md text-on-secondary-container uppercase">Practice Areas</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-primary p-6 rounded-xl h-48 flex flex-col justify-end">
+            <span class="text-headline-md font-display-lg text-white">Uganda</span>
+            <p class="font-label-sm text-primary-fixed-dim">Headquartered in Entebbe</p>
+          </div>
+          <div class="h-64 rounded-xl overflow-hidden shadow-lg">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjyb6arFaP1Fyt846kF0QFrzF8RNSHnmgnSCi0hvxxKva9XDABfx5zBuzile2VDNgsOb5vGaylVdyzpuWI3cNz7iG9XlOW1VLruyAHOKWkmkrLgkCbXlWk2EX2rdX7G75HXzE7SjgPDQBtfR7AyRtrtfkLlYVxEP6uI7UsOhis_Aw3o81mx6lPlXqb-4ooSAXz7mq4nm9YKZ5saYpYZyfxrRmOhsqCZ3JnXkIOjSRGP1EWw76SRSnVh6Pnxl7YiVEzmMXRnPdkzw" alt="Conference room">
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <section class="ftco-section ftco-no-pt">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-3 py-5">
-	          <div class="heading-section ftco-animate">
-	          	<span class="subheading">Services</span>
-	            <h2 class="mb-4">Why Select Us?</h2>
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your.</p>
-	            <p><a href="#" class="btn btn-primary py-3 px-4">Free Consultation</a></p>
-	          </div>
-    			</div>
-    			<div class="col-lg-9 services-wrap px-4 pt-5">
-    				<div class="row pt-md-3">
-    					<div class="col-md-4 d-flex align-items-stretch">
-		    				<div class="services text-center">
-		    					<div class="icon d-flex justify-content-center align-items-center">
-		    						<span class="flaticon-lawyer"></span>
-		    					</div>
-		    					<div class="text">
-		    						<h3>Fight for Justice</h3>
-		    						<p>Seeking justice in the world is a sed significant emotional and investment when we follow this call.</p>
-		    					</div>
-		    					<a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-round-forward"></span></a>
-		    				</div>
-		    			</div>
-		    			<div class="col-md-4 d-flex align-items-stretch">
-		    				<div class="services text-center">
-		    					<div class="icon d-flex justify-content-center align-items-center">
-		    						<span class="flaticon-lawyer"></span>
-		    					</div>
-		    					<div class="text">
-		    						<h3>Best Case Strategy</h3>
-		    						<p>Seeking justice in the world is a sed significant emotional and investment when we follow this call.</p>
-		    					</div>
-		    					<a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-round-forward"></span></a>
-		    				</div>
-		    			</div>
-		    			<div class="col-md-4 d-flex align-items-stretch">
-		    				<div class="services text-center">
-		    					<div class="icon d-flex justify-content-center align-items-center">
-		    						<span class="flaticon-lawyer"></span>
-		    					</div>
-		    					<div class="text">
-		    						<h3>Experienced Attorney</h3>
-		    						<p>Seeking justice in the world is a sed significant emotional and investment when we follow this call.</p>
-		    					</div>
-		    					<a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-round-forward"></span></a>
-		    				</div>
-		    			</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-   	
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
-    	<div class="container">
-    		<div class="row d-flex">
-    			<div class="col-md-6 d-flex">
-    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url(images/ofiice\ 2.jpeg);">
-    					<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
-    						<span class="icon-play"></span>
-    					</a>
-    				</div>
-    			</div>
-    			<div class="col-md-6 pl-md-5">
-    				<div class="row justify-content-start pt-3 pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<span class="subheading">Welcome to Entebbe Assosiated Advocates</span>
-		            <h2 class="mb-4">Rising the bar for legal excellence</h2>
-		            <p>Established in May 2024. Entebbe Associated Advocates is a mdern full service law firm built to provide clear, commercially astute and solution oriented legal counsel. The firm advises and represents individuals, businesses, institutions and communities across the full spectrum of legal practice.
-
-Our work spans corporate and commercial law, Civil and commercial litigation, alternative dispute resolution, land and property law, family law, succession and estate management, employment and labour law, banking and finance, tax advisory, intellectual property, constitutional and administrative law, criminal defense and regulatory compliance.
-
-At the core of our practice is a commitment to combining technical legal excellence with practical judgment. We understand that legal advice must do more than interpret the law, it must help clients make sound decisions, manage risks, protect value and achieve lasting outcomes.
-
-</p>
-		            <div class="tabulation-2 mt-4">
-									<ul class="nav nav-pills nav-fill d-md-flex d-block">
-									  <li class="nav-item mb-md-0 mb-2">
-									    <a class="nav-link active py-2" data-toggle="tab" href="#home1">Our Mission</a>
-									  </li>
-									  <li class="nav-item px-lg-2 mb-md-0 mb-2">
-									    <a class="nav-link py-2" data-toggle="tab" href="#home2">Our Vision</a>
-									  </li>
-									  <li class="nav-item">
-									    <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home3">Our Value</a>
-									  </li>
-									</ul>
-									<div class="tab-content bg-light rounded mt-2">
-									  <div class="tab-pane container p-0 active" id="home1">
-									  	<p> To deliver innovative, tailored legal solutions with exceptional service, fostering long-term relationships and empowering leaders in the legal industry to achieve their full potential. We strive to continually improve our expertise, embrace technology to drive positive change in the East African region and beyond. </p>
-									  </div>
-									  <div class="tab-pane container p-0 fade" id="home2">
-									  	<p>To be a premier, leading legal solutions hub, excelling in empowering leaders and setting the standard for legal excellence in the East African region and beyond.</p>
-									  </div>
-									  <div class="tab-pane container p-0 fade" id="home3">
-									  	<p>Transparency, Integrity, Excellence, Dedication, Efficiency</p>
-									  </div>
-									</div>
-								</div>
-		            <div class="years d-flex mt-4 mt-md-5">
-		            	<h4>
-			            	<span class="number mr-2" data-number="3">0</span>
-				            <span>Years of Experienced</span>
-			            </h4>
-		            </div>
-		          </div>
-		        </div>
-	        </div>
+<!-- ═══════════════════════════════ MISSION & VISION ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-surface-container-low" id="mission">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white p-12 border border-outline-variant/30 rounded-xl relative overflow-hidden group">
+        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+          <span class="material-symbols-outlined text-[120px] text-primary">track_changes</span>
         </div>
-    	</div>
-    </section>
+        <h3 class="font-headline-md text-headline-md text-primary mb-6 relative z-10">Our Mission</h3>
+        <p class="font-body-lg text-body-lg text-on-surface-variant relative z-10">
+          To provide agile, high-precision legal solutions that empower our clients to navigate complex regulatory environments with confidence and clarity.
+        </p>
+        <div class="mt-8 flex items-center text-secondary font-bold gap-2">
+          <span class="w-8 h-[2px] bg-secondary"></span> Strategic Excellence
+        </div>
+      </div>
+      <div class="bg-primary p-12 rounded-xl relative overflow-hidden group">
+        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+          <span class="material-symbols-outlined text-[120px] text-white">visibility</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-white mb-6 relative z-10">Our Vision</h3>
+        <p class="font-body-lg text-body-lg text-primary-fixed-dim relative z-10">
+          To be the leading modern law firm in East Africa, recognized for setting the gold standard in responsiveness, integrity, and technical innovation.
+        </p>
+        <div class="mt-8 flex items-center text-secondary-fixed font-bold gap-2">
+          <span class="w-8 h-[2px] bg-secondary-fixed"></span> Future-Ready Counsel
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5">
-          <div class="col-md-10 text-center heading-section ftco-animate">
-          	<span class="subheading">Explore Case Studies</span>
-            <h2 class="mb-4">1000+ Completed Cases Successfully</h2>
+<!-- ═══════════════════════════════ PRACTICE AREAS ═══════════════════════════════ -->
+<section class="py-section-padding-desktop" id="practice-areas">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="font-headline-lg text-headline-lg text-primary">Specialized Legal Practice</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">Comprehensive expertise across core legal disciplines designed for the modern enterprise.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">home_work</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Land Law</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Protecting rights, securing investments, and managing complex land conveyancing.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">gavel</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Litigation</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">A formidable track record in civil and commercial dispute resolution.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">business_center</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Corporate Law</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Strategic advice for business formation, compliance, and restructuring.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">balance</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Constitutional</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Upholding fundamental rights and navigating public interest law.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">family_restroom</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Family Law</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Sensitive and professional handling of domestic relations and estate planning.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">account_balance_wallet</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Taxation</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Expert guidance on fiscal compliance and tax dispute resolution.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">manufacturing</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Oil &amp; Gas</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Navigating the regulatory landscape of the extractive industries.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">assured_workload</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Intellectual Property</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Securing creative and industrial assets for innovators and businesses.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">real_estate_agent</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Real Estate</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">End-to-end legal support for property acquisition, leasing, and development.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">groups</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Labour Law</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Employment contracts, disputes, and regulatory compliance for employers and employees.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="practice-card bg-white p-8 border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="icon-box text-primary mb-6 transition-transform"><span class="material-symbols-outlined text-4xl">public</span></div>
+        <h4 class="font-headline-md text-headline-md text-primary mb-3">Immigration</h4>
+        <p class="text-on-surface-variant text-body-md flex-grow">Visas, work permits, and cross-border legal matters across East Africa.</p>
+        <a class="mt-6 text-secondary font-bold inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ OUR PROMISE ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-primary text-white">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div class="relative">
+        <img class="rounded-xl shadow-2xl relative z-10 h-[500px] w-full object-cover" src="images/promise.jpeg" alt="Professional handshake">
+        <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+      </div>
+      <div class="space-y-10">
+        <h2 class="font-headline-lg text-headline-lg">Our Promise to Clients</h2>
+        <div class="space-y-6">
+          <div class="flex gap-6">
+            <div class="w-12 h-12 flex-shrink-0 bg-secondary/10 flex items-center justify-center rounded-full">
+              <span class="material-symbols-outlined text-secondary">verified</span>
+            </div>
+            <div>
+              <h5 class="font-headline-md text-headline-md text-white mb-2">Unwavering Integrity</h5>
+              <p class="text-primary-fixed-dim">Every action we take is rooted in the highest ethical standards of the legal profession.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="w-12 h-12 flex-shrink-0 bg-secondary/10 flex items-center justify-center rounded-full">
+              <span class="material-symbols-outlined text-secondary">psychology</span>
+            </div>
+            <div>
+              <h5 class="font-headline-md text-headline-md text-white mb-2">Strategic Thinking</h5>
+              <p class="text-primary-fixed-dim">We don't just solve legal problems; we provide the strategic foresight needed for growth.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="w-12 h-12 flex-shrink-0 bg-secondary/10 flex items-center justify-center rounded-full">
+              <span class="material-symbols-outlined text-secondary">flash_on</span>
+            </div>
+            <div>
+              <h5 class="font-headline-md text-headline-md text-white mb-2">Agile Responsiveness</h5>
+              <p class="text-primary-fixed-dim">In high-stakes business, timing is everything. We respond with the urgency your case demands.</p>
+            </div>
           </div>
         </div>
-        <div class="row">
-        	<div class="col-md-12">
-        		<div class="carousel-case owl-carousel ftco-owl">
-              <div class="item">
-		        		<div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/cae-1.jpg);">
-		        			<div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
-		        			</div>
-		        		</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TRACK RECORD ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-surface-container-highest overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Leading Instructions &amp; Track Record</h2>
+    <div class="flex flex-col gap-4">
+      <div class="bg-white p-8 rounded-xl flex flex-col md:flex-row justify-between items-center gap-8 border border-outline-variant/30 hover:border-secondary transition-colors group">
+        <div class="space-y-2">
+          <span class="text-secondary font-label-md uppercase tracking-wider">Land Recovery</span>
+          <h4 class="font-headline-md text-headline-md text-primary">Church of Uganda Land Assets</h4>
+          <p class="text-on-surface-variant max-w-2xl">Successful legal oversight in the recovery and title regularization of historic land holdings across several districts.</p>
+        </div>
+        <span class="material-symbols-outlined text-5xl text-outline-variant group-hover:text-secondary transition-colors flex-shrink-0">domain</span>
+      </div>
+      <div class="bg-white p-8 rounded-xl flex flex-col md:flex-row justify-between items-center gap-8 border border-outline-variant/30 hover:border-secondary transition-colors group">
+        <div class="space-y-2">
+          <span class="text-secondary font-label-md uppercase tracking-wider">Arbitration</span>
+          <h4 class="font-headline-md text-headline-md text-primary">South Sudan Construction Dispute</h4>
+          <p class="text-on-surface-variant max-w-2xl">Representing international contractors in multi-million dollar arbitration proceedings following cross-border infrastructure projects.</p>
+        </div>
+        <span class="material-symbols-outlined text-5xl text-outline-variant group-hover:text-secondary transition-colors flex-shrink-0">handshake</span>
+      </div>
+      <div class="bg-white p-8 rounded-xl flex flex-col md:flex-row justify-between items-center gap-8 border border-outline-variant/30 hover:border-secondary transition-colors group">
+        <div class="space-y-2">
+          <span class="text-secondary font-label-md uppercase tracking-wider">Corporate Advisory</span>
+          <h4 class="font-headline-md text-headline-md text-primary">Financial Sector Restructuring</h4>
+          <p class="text-on-surface-variant max-w-2xl">Strategic advisory for a leading regional bank on regulatory compliance and asset restructuring during M&amp;A activity.</p>
+        </div>
+        <span class="material-symbols-outlined text-5xl text-outline-variant group-hover:text-secondary transition-colors flex-shrink-0">trending_up</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TEAM — CINEMATIC 5-MEMBER SLIDER ═══════════════════════════════ -->
+<section class="overflow-hidden relative" id="our-team" style="background: linear-gradient(160deg,#000f22 0%,#05192e 60%,#0a2540 100%);">
+
+  <!-- Decorative background glows -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div style="position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(123,88,0,0.08) 0%,transparent 70%);border-radius:50%;"></div>
+    <div style="position:absolute;bottom:-100px;left:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(253,195,77,0.05) 0%,transparent 70%);border-radius:50%;"></div>
+  </div>
+
+  <!-- Header + counter -->
+  <div class="relative max-w-[1280px] mx-auto px-6 pt-20 pb-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-[2px]" style="background:linear-gradient(90deg,#7b5800,#fdc34d);"></span>
+          <span class="font-label-md text-secondary tracking-widest uppercase text-xs">The People Behind Your Case</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-white">Meet Our Team</h2>
+        <p class="text-primary-fixed-dim max-w-xl font-body-md">Distinguished advocates and professionals with the expertise, integrity, and dedication your matter deserves.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="team-prev" class="team-nav-btn" aria-label="Previous"><span class="material-symbols-outlined text-xl">arrow_back</span></button>
+        <div class="text-primary-fixed-dim font-label-md text-sm px-2">
+          <span id="team-current">01</span><span class="text-white/20 mx-1">/</span><span id="team-total">05</span>
+        </div>
+        <button id="team-next" class="team-nav-btn" aria-label="Next"><span class="material-symbols-outlined text-xl">arrow_forward</span></button>
+      </div>
+    </div>
+
+    <!-- Thumbnail strip -->
+    <div class="mt-10 flex gap-3 overflow-x-auto pb-2" id="team-thumbs" style="scrollbar-width:none;">
+      <button data-thumb="0" class="team-thumb flex-shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 border-secondary/60 bg-secondary/10">
+        <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-secondary/60 flex-shrink-0">
+          <img src="images/derrick.jpeg" class="w-full h-full object-cover object-top" alt="Derrick">
+        </div>
+        <span class="text-white text-xs font-label-md whitespace-nowrap">Derrick Mugambwa</span>
+      </button>
+      <button data-thumb="1" class="team-thumb flex-shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 border-white/10 bg-white/5">
+        <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-white/20 flex-shrink-0 bg-secondary/20 flex items-center justify-center">
+          <img src="images/kilumira.jpeg" class="w-full h-full object-cover object-top" alt="Kilumira">
+        </div>
+        <span class="text-primary-fixed-dim text-xs font-label-md whitespace-nowrap">Kilumira Jonathan</span>
+      </button>
+      <button data-thumb="2" class="team-thumb flex-shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 border-white/10 bg-white/5">
+        <div class="w-8 h-8 rounded-full bg-secondary/20 border border-white/10 flex items-center justify-center flex-shrink-0 rounded-full">
+                    <img src="images/patrick.jpeg" class="w-full h-full object-cover object-top" alt="Patrick">
+        </div>
+        <span class="text-primary-fixed-dim text-xs font-label-md whitespace-nowrap">Patrick Murungi Apuuli</span>
+      </button>
+      <button data-thumb="3" class="team-thumb flex-shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 border-white/10 bg-white/5">
+        <div class="w-8 h-8 rounded-full bg-secondary/20 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <img src="images/kisitu.jpeg" class="w-full h-full object-cover object-top" alt="Kisitu">
+        </div>
+        <span class="text-primary-fixed-dim text-xs font-label-md whitespace-nowrap">Kisitu Sharif</span>
+      </button>
+      <button data-thumb="4" class="team-thumb flex-shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 border-white/10 bg-white/5">
+        <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-white/20 flex-shrink-0">
+          <img src="images/shami.jpeg" class="w-full h-full object-cover object-top" alt="Shamira">
+        </div>
+        <span class="text-primary-fixed-dim text-xs font-label-md whitespace-nowrap">Shamira Nansubuga</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Slider viewport -->
+  <div class="overflow-hidden relative" id="team-viewport">
+    <div class="team-slider-track" id="team-track">
+
+      <!-- ══ SLIDE 1: Derrick Mugambwa ══ -->
+      <div class="team-slide">
+        <div class="max-w-[1280px] mx-auto px-6 pb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col items-center text-center space-y-6">
+              <div class="relative">
+                <div class="team-avatar-ring" style="width:200px;height:200px;">
+                  <img src="images/derrick.jpeg" alt="Derrick Mugambwa" style="width:190px;height:190px;top:5px;left:5px;">
+                </div>
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                  <span class="team-dept-badge font-label-md text-xs px-5 py-2 rounded-full whitespace-nowrap shadow-lg">Lead Attorney</span>
+                </div>
               </div>
-              <div class="item">
-		        		<div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/cas-2.jpg);">
-		        			<div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
-		        			</div>
-		        		</div>
-              </div>
-              <div class="item">
-		        		<div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/cas-3.jpg);">
-		        			<div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
-		        			</div>
-		        		</div>
-              </div>
-              <div class="item">
-		        		<div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/cas-4.jpg);">
-		        			<div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
-		        			</div>
-		        		</div>
+              <div class="pt-6 w-full max-w-xs">
+                <div class="flex items-center gap-3 mb-5 justify-center">
+                  <span class="flex-1 h-px bg-white/10"></span>
+                  <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">gavel</span>
+                  <span class="flex-1 h-px bg-white/10"></span>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">10+</p><p class="text-xs text-primary-fixed-dim mt-1">Yrs Exp.</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">120+</p><p class="text-xs text-primary-fixed-dim mt-1">Cases</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">5</p><p class="text-xs text-primary-fixed-dim mt-1">Countries</p></div>
+                </div>
               </div>
             </div>
-        	</div>
-        	<div class="col-md-12 text-center mt-4">
-        		<a href="cas.html" class="btn btn-primary px-5">See All Successful Cases</a>
-        	</div>
-        </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section ftco-no-pt">
-    	<div class="container-fluid px-md-5">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Our Attorney</span>
-            <h2 class="mb-4">Our Legal Attorneys</h2>
-          </div>
-        </div>
-        <div class="row">
-        	<div class="col-lg-3 col-sm-6">
-        		<div class="block-2 ftco-animate">
-	            <div class="flipper">
-	              <div class="front" style="background-image: url(/images/patrick.jpeg);">
-	                <div class="box">
-	                  <h2>Patrick Murungi Apuuli</h2>
-	                  <p>Attorney</p>
-	                </div>
-	              </div>
-	              <div class="back">
-	                <!-- back content -->
-	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-	                </blockquote>
-	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-	                    <img src="images/patrick.jpeg" alt="">
-	                  </div>
-	                  <div class="name align-self-center ml-3">Patrick Murungi Apuuli <span class="position">Attorney</span></div>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-        	</div>
-        	<div class="col-lg-3 col-sm-6">
-        		<div class="block-2 ftco-animate">
-	            <div class="flipper">
-	              <div class="front" style="background-image: url(/images/kisitu.jpeg);">
-	                <div class="box">
-	                  <h2>Kisitu Sharif</h2>
-	                  <p>Head corporate and commercial law</p>
-	                </div>
-	              </div>
-	              <div class="back">
-	                <!-- back content -->
-	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-	                </blockquote>
-	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-	                    <img src="images/kisitu.jpeg" alt="">
-	                  </div>
-	                  <div class="name align-self-center ml-3">Kisitu Sharif<span class="position">Head corporate and commercial law</span></div>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-        	</div>
-        	<div class="col-lg-3 col-sm-6">
-        		<div class="block-2 ftco-animate">
-	            <div class="flipper">
-	              <div class="front" style="background-image: url(/images/derrick.jpeg);">
-	                <div class="box">
-	                  <h2>Derrick Mwangi</h2>
-	                  <p>Criminal Defense</p>
-	                </div>
-	              </div>
-	              <div class="back">
-	                <!-- back content -->
-	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-	                </blockquote>
-	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-	                    <img src="images/derrick.jpeg" alt="">
-	                  </div>
-	                  <div class="name align-self-center ml-3">Derrick Mwangi <span class="position">Criminal Defense</span></div>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-        	</div>
-        	<div class="col-lg-3 col-sm-6">
-        		<div class="block-2 ftco-animate">
-	            <div class="flipper">
-	              <div class="front" style="background-image: url(/images/peson_.jpg);">
-	                <div class="box">
-	                  <h2>Jack Smith</h2>
-	                  <p>Insurance Lawyer</p>
-	                </div>
-	              </div>
-	              <div class="back">
-	                <!-- back content -->
-	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-	                </blockquote>
-	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-	                    <img src="images/peron.pg" alt="">
-	                  </div>
-	                  <div class="name align-self-center ml-3">Jack Smith <span class="position">Insurance Lawyer</span></div>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-        	</div>
-        </div>
-    	</div>
-    </section>
-		
-
-		<section class="ftco-consultation ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(images/bg_2.jpg);">
-			<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row d-md-flex justify-content-end">
-    			<div class="col-md-6 half p-3 py-5 pl-md-5 ftco-animate heading-section heading-section-white">
-    				<span class="subheading">Booking an Appointment</span>
-    				<h2 class="mb-4">Free Consultation</h2>
-    				<form action="#" class="consultation">
-	            <div class="form-group">
-	              <input type="text" class="form-control" placeholder="Your Name">
-	            </div>
-	            <div class="form-group">
-	              <input type="text" class="form-control" placeholder="Your Email">
-	            </div>
-	            <div class="form-group">
-	              <input type="text" class="form-control" placeholder="Subject">
-	            </div>
-	            <div class="form-group">
-	              <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-	            </div>
-	            <div class="form-group">
-	              <input type="submit" value="Send message" class="btn btn-dark py-3 px-4">
-	            </div>
-	          </form>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-
-    <section class="ftco-section testimony-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Testimonial</span>
-            <h2 class="mb-4">Happy Clients</h2>
-          </div>
-        </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/perso1.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
+            <div class="space-y-5">
+              <div>
+                <p class="text-secondary font-label-md uppercase tracking-widest text-xs mb-2">Advocate · High Court of Uganda</p>
+                <h3 class="font-display-lg text-white mb-1" style="font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;">Derrick<br>Mugambwa</h3>
+              </div>
+              <div style="width:48px;height:2px;background:linear-gradient(90deg,#7b5800,#fdc34d);"></div>
+              <p class="text-primary-fixed-dim font-body-md leading-relaxed">Derrick leads the firm with over a decade of experience in complex litigation, land law, and corporate advisory. A respected figure in Uganda's legal community, he has appeared before the High Court and Court of Appeal, and represented clients in international arbitration across East Africa.</p>
+              <div>
+                <p class="text-xs text-primary-fixed-dim/60 uppercase tracking-widest font-label-sm mb-3">Areas of Expertise</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="expertise-pill">Land Law</span><span class="expertise-pill">Litigation</span><span class="expertise-pill">Corporate Advisory</span><span class="expertise-pill">Arbitration</span><span class="expertise-pill">Constitutional Law</span>
                 </div>
               </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/persn.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/prson_.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/peson_1.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/persn_2.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#" class="inline-flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-secondary-fixed-dim transition-all text-sm">Full Profile <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                <a href="#contact" class="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-white/10 transition-all text-sm">Book a Meeting</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Our Blog</span>
-            <h2>Recent Blog</h2>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-          		<div class="text px-4 py-4">
-          			<h3 class="heading mb-0"><a href="#">All you want to know about industrial laws</a></h3>
-          		</div>
-              <a href="blo-single.html" class="block-20" style="background-image: url('images/blo-1.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="topper d-flex align-items-center">
-              		<div class="one py-2 pl-3 pr-1 align-self-stretch">
-              			<span class="day">18</span>
-              		</div>
-              		<div class="two pl-0 pr-3 py-2 align-self-stretch">
-              			<span class="yr">2019</span>
-              			<span class="mos">October</span>
-              		</div>
-              	</div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+      <!-- ══ SLIDE 2: Kilumira Jonathan ══ -->
+      <div class="team-slide">
+        <div class="max-w-[1280px] mx-auto px-6 pb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col items-center text-center space-y-6">
+              <div class="relative">
+                <div class="team-avatar-ring" style="width:200px;height:200px;">
+                  <img src="images/kilumira.jpeg" alt="Kilumira Jonathan" style="width:190px;height:190px;top:5px;left:5px;">
+                </div>
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                  <span class="team-dept-badge font-label-md text-xs px-5 py-2 rounded-full whitespace-nowrap shadow-lg">Attorney</span>
+                </div>
+              </div>
+              <div class="pt-6 w-full max-w-xs">
+                <div class="flex items-center gap-3 mb-5 justify-center">
+                  <span class="flex-1 h-px bg-white/10"></span>
+                  <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">business_center</span>
+                  <span class="flex-1 h-px bg-white/10"></span>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">7+</p><p class="text-xs text-primary-fixed-dim mt-1">Yrs Exp.</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">80+</p><p class="text-xs text-primary-fixed-dim mt-1">Deals</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">$M</p><p class="text-xs text-primary-fixed-dim mt-1">Arbitration</p></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-          		<div class="text px-4 py-4">
-          			<h3 class="heading mb-0"><a href="#">All you want to know about industrial laws</a></h3>
-          		</div>
-              <a href="blo-single.html" class="block-20" style="background-image: url('images/imag_2.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="topper d-flex align-items-center">
-              		<div class="one py-2 pl-3 pr-1 align-self-stretch">
-              			<span class="day">18</span>
-              		</div>
-              		<div class="two pl-0 pr-3 py-2 align-self-stretch">
-              			<span class="yr">2019</span>
-              			<span class="mos">October</span>
-              		</div>
-              	</div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+            <div class="space-y-5">
+              <div>
+                <p class="text-secondary font-label-md uppercase tracking-widest text-xs mb-2">Attorney · Corporate &amp; Extractive Industries</p>
+                <h3 class="font-display-lg text-white mb-1" style="font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;">Kilumira<br>Jonathan</h3>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-          		<div class="text px-4 py-4">
-          			<h3 class="heading mb-0"><a href="#">All you want to know about industrial laws</a></h3>
-          		</div>
-              <a href="blo-single.html" class="block-20" style="background-image: url('images/imae_3.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="topper d-flex align-items-center">
-              		<div class="one py-2 pl-3 pr-1 align-self-stretch">
-              			<span class="day">18</span>
-              		</div>
-              		<div class="two pl-0 pr-3 py-2 align-self-stretch">
-              			<span class="yr">2019</span>
-              			<span class="mos">October</span>
-              		</div>
-              	</div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+              <div style="width:48px;height:2px;background:linear-gradient(90deg,#7b5800,#fdc34d);"></div>
+              <p class="text-primary-fixed-dim font-body-md leading-relaxed">Jonathan advises on oil &amp; gas regulatory matters, company formation, and cross-border M&amp;A transactions. He has represented clients in multi-million dollar arbitration proceedings across East Africa, bringing sharp commercial instinct to every instruction.</p>
+              <div>
+                <p class="text-xs text-primary-fixed-dim/60 uppercase tracking-widest font-label-sm mb-3">Areas of Expertise</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="expertise-pill">Corporate Law</span><span class="expertise-pill">Oil &amp; Gas</span><span class="expertise-pill">M&amp;A Transactions</span><span class="expertise-pill">Arbitration</span><span class="expertise-pill">Regulatory Compliance</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#" class="inline-flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-secondary-fixed-dim transition-all text-sm">Full Profile <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                <a href="#contact" class="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-white/10 transition-all text-sm">Book a Meeting</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-		
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb bg-light">
-      <div class="container">
-        <div class="row d-flex justify-content-end">
-        	<div class="col-md-8 py-4 px-md-4 bg-primary">
-        		<div class="row">
-		          <div class="col-md-6 ftco-animate d-flex align-items-center">
-		            <h2 class="mb-0" style="color:white; font-size: 24px;">Subcribe to our Newsletter</h2>
-		          </div>
-		          <div class="col-md-6 d-flex align-items-center">
-		            <form action="#" class="subscribe-form">
-		              <div class="form-group d-flex">
-		                <input type="text" class="form-control" placeholder="Enter email address">
-		                <input type="submit" value="Subscribe" class="submit px-3">
-		              </div>
-		            </form>
-		          </div>
-	          </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="logo"><a href="#">ENTEBBE ASSOCIATED ADVOCATES <span>Rising the Bar</span></a></h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
+      <!-- ══ SLIDE 3: Patrick Murungi Apuuli ══ -->
+      <div class="team-slide">
+        <div class="max-w-[1280px] mx-auto px-6 pb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col items-center text-center space-y-6">
+              <div class="relative">
+                <div class="team-avatar-ring" style="width:200px;height:200px;">
+<div class="team-avatar-ring" style="width:200px;height:200px;"> 
+	 <img src="images/patrick.jpeg" alt="Patrick Murungi Apuuli" style="width:190px;height:190px;top:5px;left:5px;">
+                  </div>
+                </div>
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                  <span class="team-dept-badge font-label-md text-xs px-5 py-2 rounded-full whitespace-nowrap shadow-lg">Attorney</span>
+                </div>
+              </div>
+              <div class="pt-6 w-full max-w-xs">
+                <div class="flex items-center gap-3 mb-5 justify-center">
+                  <span class="flex-1 h-px bg-white/10"></span>
+                  <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">balance</span>
+                  <span class="flex-1 h-px bg-white/10"></span>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">6+</p><p class="text-xs text-primary-fixed-dim mt-1">Yrs Exp.</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">70+</p><p class="text-xs text-primary-fixed-dim mt-1">Cases</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">3</p><p class="text-xs text-primary-fixed-dim mt-1">Specialisms</p></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Practice Areas</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Family Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Business Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Insurance Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Criminal Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Drug Offenses</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Fire Accident</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Employment Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Property Law</a></li>
-
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Jab Apartments, Suite No.3, Plot 10241, Kabuusu Lweza Road <br>
-					Seguku-Ngobe ,Opp . Ngobe Police Station</span></li>
-	                <li><a href="tel:+256393100347"><span class="icon icon-phone"></span><span class="text">+256 393 100 347</span></a></li>
-					<li><a href="tel:+256393100347"><span class="icon icon-envelope"></span><span class="text">P.O.Box 702365 Entebbe</span></a></li>
-	                <li><a href="mailto:entebbeassociates@gmail.com"><span class="icon icon-envelope"></span><span class="text">entebbeassociates@gmail.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Business Hours</h2>
-              <div class="opening-hours">
-              	<h4>Opening Days:</h4>
-              	<p class="pl-3">
-              		<span>Monday – Friday : 9am to 20 pm</span>
-              		<span>Saturday : 9am to 17 pm</span>
-              	</p>
-              	<h4>Vacations:</h4>
-              	<p class="pl-3">
-              		<span>All Sunday Days</span>
-              		<span>All Official Holidays</span>
-              	</p>
+            <div class="space-y-5">
+              <div>
+                <p class="text-secondary font-label-md uppercase tracking-widest text-xs mb-2">Attorney · Litigation &amp; Land Law</p>
+                <h3 class="font-display-lg text-white mb-1" style="font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;">Patrick Murungi<br>Apuuli</h3>
+              </div>
+              <div style="width:48px;height:2px;background:linear-gradient(90deg,#7b5800,#fdc34d);"></div>
+              <p class="text-primary-fixed-dim font-body-md leading-relaxed">Patrick brings methodical precision to litigation and land law matters. With a strong record before Uganda's courts, he handles complex land conveyancing, title disputes, and commercial litigation, advocating tenaciously for clients at every stage of proceedings.</p>
+              <div>
+                <p class="text-xs text-primary-fixed-dim/60 uppercase tracking-widest font-label-sm mb-3">Areas of Expertise</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="expertise-pill">Litigation</span><span class="expertise-pill">Land Law</span><span class="expertise-pill">Real Estate</span><span class="expertise-pill">Civil Disputes</span><span class="expertise-pill">Contract Law</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#" class="inline-flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-secondary-fixed-dim transition-all text-sm">Full Profile <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                <a href="#contact" class="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-white/10 transition-all text-sm">Book a Meeting</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
+      </div>
 
-            <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  EAA |  developed by  <a href="https://spotnet.com" target="_blank">Spotnet Technologies</a>
-  </p>
+      <!-- ══ SLIDE 4: Kisitu Sharif ══ -->
+      <div class="team-slide">
+        <div class="max-w-[1280px] mx-auto px-6 pb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col items-center text-center space-y-6">
+              <div class="relative">
+                <div class="team-avatar-ring" style="width:200px;height:200px;">
+                  <div class="team-avatar-ring" style="width:200px;height:200px;"> 
+	 <img src="images/kisitu.jpeg" alt="Kisitu Sharif" style="width:190px;height:190px;top:5px;left:5px;">
+                  </div>
+                </div>
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                  <span class="team-dept-badge font-label-md text-xs px-5 py-2 rounded-full whitespace-nowrap shadow-lg">Attorney</span>
+                </div>
+              </div>
+              <div class="pt-6 w-full max-w-xs">
+                <div class="flex items-center gap-3 mb-5 justify-center">
+                  <span class="flex-1 h-px bg-white/10"></span>
+                  <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">assured_workload</span>
+                  <span class="flex-1 h-px bg-white/10"></span>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">5+</p><p class="text-xs text-primary-fixed-dim mt-1">Yrs Exp.</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">60+</p><p class="text-xs text-primary-fixed-dim mt-1">Cases</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">4</p><p class="text-xs text-primary-fixed-dim mt-1">Specialisms</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-5">
+              <div>
+                <p class="text-secondary font-label-md uppercase tracking-widest text-xs mb-2">Attorney · Family &amp; Constitutional Law</p>
+                <h3 class="font-display-lg text-white mb-1" style="font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;">Kisitu<br>Sharif</h3>
+              </div>
+              <div style="width:48px;height:2px;background:linear-gradient(90deg,#7b5800,#fdc34d);"></div>
+              <p class="text-primary-fixed-dim font-body-md leading-relaxed">Kisitu specialises in family and constitutional law, offering sensitive yet decisive legal counsel across domestic relations, inheritance disputes, and public interest litigation. His client-first philosophy has earned him a strong reputation for favourable outcomes.</p>
+              <div>
+                <p class="text-xs text-primary-fixed-dim/60 uppercase tracking-widest font-label-sm mb-3">Areas of Expertise</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="expertise-pill">Family Law</span><span class="expertise-pill">Constitutional Law</span><span class="expertise-pill">Taxation</span><span class="expertise-pill">Immigration</span><span class="expertise-pill">Labour Law</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#" class="inline-flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-secondary-fixed-dim transition-all text-sm">Full Profile <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                <a href="#contact" class="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-white/10 transition-all text-sm">Book a Meeting</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-    
-  <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/256703805997?text=Hello%20I%20would%20like%20to%20consult%20with%20a%20lawyer" 
-   class="whatsapp-float" 
-   target="_blank">
-   <i class="icon-whatsapp"></i>
-</a>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+      <!-- ══ SLIDE 5: Shamira Nansubuga ══ -->
+      <div class="team-slide">
+        <div class="max-w-[1280px] mx-auto px-6 pb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="flex flex-col items-center text-center space-y-6">
+              <div class="relative">
+                <div class="team-avatar-ring" style="width:200px;height:200px;">
+                  <img src="images/shami.jpeg" alt="Shamira Nansubuga" style="width:190px;height:190px;top:5px;left:5px;">
+                </div>
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                  <span style="background:rgba(253,195,77,0.15);border:1px solid rgba(253,195,77,0.4);color:#fdc34d;" class="font-label-md text-xs px-5 py-2 rounded-full whitespace-nowrap shadow-lg">Office Administrator</span>
+                </div>
+              </div>
+              <div class="pt-6 w-full max-w-xs">
+                <div class="flex items-center gap-3 mb-5 justify-center">
+                  <span class="flex-1 h-px bg-white/10"></span>
+                  <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">manage_accounts</span>
+                  <span class="flex-1 h-px bg-white/10"></span>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">5+</p><p class="text-xs text-primary-fixed-dim mt-1">Yrs Exp.</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">50+</p><p class="text-xs text-primary-fixed-dim mt-1">Cases Mgd.</p></div>
+                  <div class="team-stat-card"><p class="text-2xl font-bold text-white">3</p><p class="text-xs text-primary-fixed-dim mt-1">Departments</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-5">
+              <div>
+                <p class="text-secondary font-label-md uppercase tracking-widest text-xs mb-2">Office Administrator &amp; Client Relations</p>
+                <h3 class="font-display-lg text-white mb-1" style="font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;">Shamira<br>Nansubuga</h3>
+              </div>
+              <div style="width:48px;height:2px;background:linear-gradient(90deg,#7b5800,#fdc34d);"></div>
+              <p class="text-primary-fixed-dim font-body-md leading-relaxed">Shamira is the operational backbone of Entebbe Associated Advocates. She coordinates case management, client onboarding, and internal administration across all departments, ensuring every client receives a seamless, professional experience from first contact through to case closure.</p>
+              <div>
+                <p class="text-xs text-primary-fixed-dim/60 uppercase tracking-widest font-label-sm mb-3">Responsibilities</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="expertise-pill">Client Relations</span><span class="expertise-pill">Case Management</span><span class="expertise-pill">Office Operations</span><span class="expertise-pill">Scheduling</span><span class="expertise-pill">Records Management</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#" class="inline-flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-secondary-fixed-dim transition-all text-sm">Full Profile <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                <a href="#contact" class="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-2.5 rounded-lg font-label-md hover:bg-white/10 transition-all text-sm">Get in Touch</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end team-track -->
+  </div><!-- end viewport -->
+
+  <!-- Progress + dots -->
+  <div class="max-w-[1280px] mx-auto px-6 pb-16 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="w-full max-w-xs">
+      <div class="team-progress-bar">
+        <div class="team-progress-fill" id="team-progress" style="width:0%"></div>
+      </div>
+      <p class="text-primary-fixed-dim text-xs mt-2 font-label-sm">Auto-advancing · click names above to navigate</p>
+    </div>
+    <div class="flex items-center gap-2" id="team-dots">
+      <div class="team-dot active" data-index="0"></div>
+      <div class="team-dot" data-index="1"></div>
+      <div class="team-dot" data-index="2"></div>
+      <div class="team-dot" data-index="3"></div>
+      <div class="team-dot" data-index="4"></div>
+    </div>
+  </div>
+</section>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
-  </body>
+<!-- ═══════════════════════════════ TESTIMONIALS SLIDER ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-primary overflow-hidden" id="testimonials">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div class="space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-[2px] bg-secondary"></span>
+          <span class="font-label-md text-secondary tracking-widest uppercase text-xs">Client Voices</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-white">What Our Clients Say</h2>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="testi-prev" class="team-nav-btn" aria-label="Previous testimonial">
+          <span class="material-symbols-outlined text-xl">arrow_back</span>
+        </button>
+        <button id="testi-next" class="team-nav-btn" aria-label="Next testimonial">
+          <span class="material-symbols-outlined text-xl">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden" id="testi-viewport">
+    <div class="testi-track" id="testi-track">
+
+      <!-- Testimonial 1 -->
+      <div class="testi-slide px-6">
+        <div class="max-w-[1280px] mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+            <div class="lg:col-span-2 space-y-6">
+              <div class="text-8xl font-display-lg text-secondary opacity-40 leading-none">"</div>
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-full bg-secondary/30 border-2 border-secondary/50 flex items-center justify-center flex-shrink-0">
+                  <span class="text-secondary font-bold text-xl">DK</span>
+                </div>
+                <div>
+                  <p class="text-white font-bold text-lg">David Kyambadde</p>
+                  <p class="text-primary-fixed-dim text-sm">Director, Kyambadde Holdings</p>
+                  <div class="flex gap-1 mt-1">
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-primary-fixed-dim text-sm">
+                <span class="material-symbols-outlined text-sm">location_on</span> Kampala, Uganda
+              </div>
+            </div>
+            <div class="lg:col-span-3">
+              <p class="text-white font-body-lg text-2xl leading-relaxed italic font-display-lg">
+                "Entebbe Associated Advocates handled our land dispute with remarkable precision and speed. Robert Mugisha personally oversaw the case and kept us informed at every step. We recovered what was rightfully ours."
+              </p>
+              <div class="mt-8 pt-8 border-t border-white/10">
+                <span class="text-primary-fixed-dim text-sm">Practice Area:</span>
+                <span class="text-secondary font-bold ml-2">Land Law &amp; Recovery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testi-slide px-6">
+        <div class="max-w-[1280px] mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+            <div class="lg:col-span-2 space-y-6">
+              <div class="text-8xl font-display-lg text-secondary opacity-40 leading-none">"</div>
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-full bg-secondary/30 border-2 border-secondary/50 flex items-center justify-center flex-shrink-0">
+                  <span class="text-secondary font-bold text-xl">AM</span>
+                </div>
+                <div>
+                  <p class="text-white font-bold text-lg">Amina Mohamed</p>
+                  <p class="text-primary-fixed-dim text-sm">Real Estate Developer, Nairobi</p>
+                  <div class="flex gap-1 mt-1">
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-primary-fixed-dim text-sm">
+                <span class="material-symbols-outlined text-sm">location_on</span> Nairobi, Kenya
+              </div>
+            </div>
+            <div class="lg:col-span-3">
+              <p class="text-white font-body-lg text-2xl leading-relaxed italic font-display-lg">
+                "As a foreign investor entering Uganda's real estate market, I needed a firm I could trust completely. Entebbe Associated Advocates navigated every regulatory hurdle efficiently. Truly world-class service."
+              </p>
+              <div class="mt-8 pt-8 border-t border-white/10">
+                <span class="text-primary-fixed-dim text-sm">Practice Area:</span>
+                <span class="text-secondary font-bold ml-2">Real Estate &amp; Investment Law</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testi-slide px-6">
+        <div class="max-w-[1280px] mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+            <div class="lg:col-span-2 space-y-6">
+              <div class="text-8xl font-display-lg text-secondary opacity-40 leading-none">"</div>
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-full bg-secondary/30 border-2 border-secondary/50 flex items-center justify-center flex-shrink-0">
+                  <span class="text-secondary font-bold text-xl">PO</span>
+                </div>
+                <div>
+                  <p class="text-white font-bold text-lg">Peter Okello</p>
+                  <p class="text-primary-fixed-dim text-sm">CEO, Lakeside Financial Group</p>
+                  <div class="flex gap-1 mt-1">
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                    <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">star</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-primary-fixed-dim text-sm">
+                <span class="material-symbols-outlined text-sm">location_on</span> Kampala, Uganda
+              </div>
+            </div>
+            <div class="lg:col-span-3">
+              <p class="text-white font-body-lg text-2xl leading-relaxed italic font-display-lg">
+                "We engaged the firm during a sensitive corporate restructuring. John Bosco's expertise in corporate law was indispensable. The team was responsive, thorough, and delivered beyond our expectations."
+              </p>
+              <div class="mt-8 pt-8 border-t border-white/10">
+                <span class="text-primary-fixed-dim text-sm">Practice Area:</span>
+                <span class="text-secondary font-bold ml-2">Corporate Law &amp; M&amp;A</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end testi-track -->
+  </div>
+
+  <!-- Dots -->
+  <div class="max-w-[1280px] mx-auto px-6 mt-12 flex justify-center gap-2" id="testi-dots">
+    <div class="testi-dot active" data-index="0"></div>
+    <div class="testi-dot" data-index="1"></div>
+    <div class="testi-dot" data-index="2"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ BLOG & NEWS ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-surface-container-low" id="blog">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div class="space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-[2px] bg-secondary"></span>
+          <span class="font-label-md text-secondary tracking-widest uppercase text-xs">Legal Insights</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-primary">News &amp; Articles</h2>
+        <p class="text-on-surface-variant max-w-xl">Stay informed on legal developments shaping business and daily life across East Africa.</p>
+      </div>
+      <a href="#" class="inline-flex items-center gap-2 border border-outline-variant text-primary px-6 py-3 rounded-lg font-label-md hover:bg-primary hover:text-white hover:border-primary transition-all w-fit flex-shrink-0">
+        View All Articles <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- Featured post + 3 side posts -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-10">
+
+      <!-- Featured large card -->
+      <div class="lg:col-span-3 blog-card bg-white rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+        <div class="relative overflow-hidden h-72">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGyaRoq9M_-QMHDkrKgrySC9UmXJmSVy6D1v1znpX7S5UtTa7swD-MUZm1GT9nk_gmPkDn2F9H-tEkZGJvCmnC4oEqBVNELfXgND0FdfftFKPAfdecHaLlaQV0HvhBYe3lfOalA6idy9hzD-mLdRgfBYPrZR-gO02m9FowojeZtorBj3bf_JvrYOSl_nM9w_6EIqglANfpTkGCdUEbdF3acNhDz9IvaD_ZfVO8sI5v1uQNBwGUGo7-IWSi4_qMG42AkEdeWuN3pQ" alt="Featured article" class="blog-img w-full h-full object-cover">
+          <div class="absolute top-4 left-4">
+            <span class="blog-category-badge bg-secondary text-white">Featured</span>
+          </div>
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-label-sm text-primary">
+            Land Law
+          </div>
+        </div>
+        <div class="p-8 flex flex-col flex-grow">
+          <div class="flex items-center gap-3 text-xs text-on-surface-variant mb-4">
+            <span class="material-symbols-outlined text-sm">calendar_today</span> June 2, 2025
+            <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+            <span>8 min read</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary mb-3 group-hover:text-secondary transition-colors">Understanding the New Land Act Amendments: What Property Owners in Uganda Need to Know</h3>
+          <p class="text-on-surface-variant font-body-md leading-relaxed mb-6 flex-grow">
+            The recent amendments to Uganda's Land Act introduce significant changes affecting both individual landowners and corporate entities. From revised procedures for title transfers to new protections for customary land rights, we break down what these changes mean for you.
+          </p>
+          <div class="flex items-center justify-between border-t border-outline-variant/30 pt-6">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+                <span class="text-on-secondary-container text-xs font-bold">RM</span>
+              </div>
+              <span class="text-sm text-on-surface-variant font-label-sm">Robert Mugisha</span>
+            </div>
+            <a href="#" class="blog-read-more text-sm font-label-md">Read Article</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side posts column -->
+      <div class="lg:col-span-2 flex flex-col gap-6">
+
+        <!-- Side post 1 -->
+        <div class="blog-card bg-white rounded-2xl overflow-hidden border border-outline-variant/30 flex gap-0 flex-col sm:flex-row lg:flex-col xl:flex-row">
+          <div class="relative overflow-hidden w-full sm:w-36 lg:w-full xl:w-36 h-40 sm:h-auto flex-shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ZRisuqOdbmfcSs9XcOYmya7zFqDePqJTM9VL_q15SvMIAd9blQQtv7cnmgpjokkbVMGxKl2b7JJnsE44t5YghN9pOXfhrmj7vcHx1qUxJglanHsjoF_7RNod5xsBUiE1owj5X2p5hDXdarYhhhmCCz1RGOCeySWheJWZq6O1WlcRYLTXFSxP3N99PT1gd7P0uKZ6zZD1GnYbb3zk-2lWBAytIMMe-qgHsqkZHoXjse8rxDX2QM0PveBDUVntHinNvmkhilU04Q" alt="Article" class="blog-img w-full h-full object-cover">
+            <div class="absolute top-2 left-2">
+              <span class="blog-category-badge bg-primary-container text-on-primary text-[10px] px-2 py-0.5">Corporate</span>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col justify-between">
+            <div>
+              <p class="text-xs text-on-surface-variant mb-2 flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> May 18, 2025</p>
+              <h4 class="font-headline-md text-base text-primary mb-2 leading-snug">Company Registration in Uganda: A Step-by-Step Guide for Entrepreneurs</h4>
+            </div>
+            <a href="#" class="blog-read-more text-sm font-label-md mt-3 inline-block">Read More</a>
+          </div>
+        </div>
+
+        <!-- Side post 2 -->
+        <div class="blog-card bg-white rounded-2xl overflow-hidden border border-outline-variant/30 flex gap-0 flex-col sm:flex-row lg:flex-col xl:flex-row">
+          <div class="relative overflow-hidden w-full sm:w-36 lg:w-full xl:w-36 h-40 sm:h-auto flex-shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjyb6arFaP1Fyt846kF0QFrzF8RNSHnmgnSCi0hvxxKva9XDABfx5zBuzile2VDNgsOb5vGaylVdyzpuWI3cNz7iG9XlOW1VLruyAHOKWkmkrLgkCbXlWk2EX2rdX7G75HXzE7SjgPDQBtfR7AyRtrtfkLlYVxEP6uI7UsOhis_Aw3o81mx6lPlXqb-4ooSAXz7mq4nm9YKZ5saYpYZyfxrRmOhsqCZ3JnXkIOjSRGP1EWw76SRSnVh6Pnxl7YiVEzmMXRnPdkzw" alt="Article" class="blog-img w-full h-full object-cover">
+            <div class="absolute top-2 left-2">
+              <span class="blog-category-badge bg-secondary-container text-on-secondary-container text-[10px] px-2 py-0.5">Family Law</span>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col justify-between">
+            <div>
+              <p class="text-xs text-on-surface-variant mb-2 flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> May 5, 2025</p>
+              <h4 class="font-headline-md text-base text-primary mb-2 leading-snug">Inheritance Rights in Uganda: Protecting Your Family's Future</h4>
+            </div>
+            <a href="#" class="blog-read-more text-sm font-label-md mt-3 inline-block">Read More</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom row — 3 equal cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="blog-card bg-white rounded-2xl overflow-hidden border border-outline-variant/30">
+        <div class="relative overflow-hidden h-48">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfKfexvqMb4P8kEmJqB-7_SdObKyKPVo-s5Ej_7OI1k9o3LnYWSP4byfbH7EAkymtDTjJTmdBLorfMiAXreIlsCJuS9NXydfbjf_Y5bE6CYm0TsWYfJzOfw1juZbVgGi3GWD9NP2inmIilb0pGNxSQ_FCu7co8TiefoAbZtxk92tnnRyQLWUkrt8kftnmRaasp7c8Nfbiok5epcXoPdGg1llksPPTSA7FPVHTncGgcUiI-_fazantdpDU6cNdVwJPCiiBXca5pkA" alt="Article" class="blog-img w-full h-full object-cover">
+          <div class="absolute top-3 left-3"><span class="blog-category-badge bg-secondary text-white">Oil &amp; Gas</span></div>
+        </div>
+        <div class="p-6">
+          <p class="text-xs text-on-surface-variant mb-3 flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> Apr 22, 2025 · 6 min</p>
+          <h4 class="font-headline-md text-lg text-primary mb-3 leading-snug">Uganda's Oil Sector: Legal Challenges Facing Foreign Investors in 2025</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">An analysis of regulatory frameworks, contract risks, and compliance obligations for companies entering Uganda's growing extractive sector.</p>
+          <a href="#" class="blog-read-more text-sm font-label-md">Read Article</a>
+        </div>
+      </div>
+
+      <div class="blog-card bg-white rounded-2xl overflow-hidden border border-outline-variant/30">
+        <div class="relative overflow-hidden h-48">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9B0zYUuQznQUQOrCPV739rHDm-A6EufZ3bqwq2myCnRKO9WBOMIAuI9JnOluVExfLZ6KGj7MuIHu-Y6tpx5Z9p_0mucaw-xI4nRUdQ7AkzdRTYdtc1_4RWTtGzX6jIgrGHiTEy0nJbxjBN3CosM-S-Eu71YHKr7pFliEq0kY4Ff0Fqt0XG4A6YyORhZ0F1viILbuYquHE72MrITRRETljxUMfUdInewZSs2xqHRRH24YGSR0ONnme-MURYVYI4iI1FnT8_3192Q" alt="Article" class="blog-img w-full h-full object-cover">
+          <div class="absolute top-3 left-3"><span class="blog-category-badge bg-primary-container text-on-primary">Litigation</span></div>
+        </div>
+        <div class="p-6">
+          <p class="text-xs text-on-surface-variant mb-3 flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> Apr 10, 2025 · 5 min</p>
+          <h4 class="font-headline-md text-lg text-primary mb-3 leading-snug">How to Enforce a Court Judgment in Uganda: A Practical Guide</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Winning a case is only half the battle. We explain the enforcement mechanisms available under Ugandan law and how to recover what you are owed.</p>
+          <a href="#" class="blog-read-more text-sm font-label-md">Read Article</a>
+        </div>
+      </div>
+
+      <!-- Newsletter subscribe card -->
+      <div class="rounded-2xl overflow-hidden" style="background: linear-gradient(135deg,#000f22 0%,#0a2540 100%);">
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-secondary text-4xl mb-4 block">mail_outline</span>
+            <h4 class="font-headline-md text-xl text-white mb-3">Legal Insights Newsletter</h4>
+            <p class="text-primary-fixed-dim text-sm leading-relaxed mb-6">Get our monthly digest of key legal developments in Uganda and East Africa — straight to your inbox.</p>
+          </div>
+          <div class="space-y-3">
+            <input type="email" placeholder="Your email address" class="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-all">
+            <button class="w-full bg-secondary text-white py-3 rounded-lg font-label-md hover:bg-secondary-fixed-dim transition-all text-sm">
+              Subscribe — It's Free
+            </button>
+            <p class="text-white/30 text-xs text-center">No spam. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-white" id="faq">
+  <div class="max-w-[900px] mx-auto px-6">
+    <div class="text-center mb-16 space-y-4">
+      <span class="font-label-md text-secondary tracking-widest uppercase">Common Questions</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-4" id="faq-list">
+      <div class="faq-item border border-outline-variant/30 rounded-xl overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors">
+          <span class="font-headline-md text-headline-md text-primary pr-4">How do I schedule a consultation?</span>
+          <span class="material-symbols-outlined text-secondary flex-shrink-0 faq-icon transition-transform">expand_more</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-6">
+          <p class="text-on-surface-variant font-body-md leading-relaxed">You can schedule a consultation by filling out our contact form below, calling us directly at +256 393 100 347, or sending a WhatsApp message. We typically respond within 2 business hours and schedule initial consultations within 48 hours.</p>
+        </div>
+      </div>
+      <div class="faq-item border border-outline-variant/30 rounded-xl overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors">
+          <span class="font-headline-md text-headline-md text-primary pr-4">What are your legal fees?</span>
+          <span class="material-symbols-outlined text-secondary flex-shrink-0 faq-icon transition-transform">expand_more</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-6">
+          <p class="text-on-surface-variant font-body-md leading-relaxed">Our fees vary depending on the nature, complexity, and urgency of the matter. We offer transparent fee structures — fixed fees for standard matters and hourly rates for complex litigation. All fees are discussed and agreed upon at the initial consultation before work begins.</p>
+        </div>
+      </div>
+      <div class="faq-item border border-outline-variant/30 rounded-xl overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors">
+          <span class="font-headline-md text-headline-md text-primary pr-4">Do you handle matters outside Uganda?</span>
+          <span class="material-symbols-outlined text-secondary flex-shrink-0 faq-icon transition-transform">expand_more</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-6">
+          <p class="text-on-surface-variant font-body-md leading-relaxed">Yes. We regularly handle cross-border matters across East Africa, including Kenya, Tanzania, Rwanda, and South Sudan. For international matters, we work with a trusted network of correspondent lawyers to ensure seamless representation wherever our clients need us.</p>
+        </div>
+      </div>
+      <div class="faq-item border border-outline-variant/30 rounded-xl overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors">
+          <span class="font-headline-md text-headline-md text-primary pr-4">How long does a typical land title transfer take?</span>
+          <span class="material-symbols-outlined text-secondary flex-shrink-0 faq-icon transition-transform">expand_more</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-6">
+          <p class="text-on-surface-variant font-body-md leading-relaxed">A standard land title transfer in Uganda typically takes 4–8 weeks, depending on the completeness of documentation and responsiveness of the Uganda Registration Services Bureau (URSB). We actively follow up to ensure the process moves as efficiently as possible.</p>
+        </div>
+      </div>
+      <div class="faq-item border border-outline-variant/30 rounded-xl overflow-hidden">
+        <button class="faq-btn w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors">
+          <span class="font-headline-md text-headline-md text-primary pr-4">Is my information kept confidential?</span>
+          <span class="material-symbols-outlined text-secondary flex-shrink-0 faq-icon transition-transform">expand_more</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-6">
+          <p class="text-on-surface-variant font-body-md leading-relaxed">Absolutely. All client communications and case details are protected by attorney-client privilege and our strict internal confidentiality policy. We take data privacy seriously and will never share your information with third parties without your express consent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+<section class="py-section-padding-desktop bg-surface-container-low" id="contact">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="text-center mb-16 space-y-4">
+      <span class="font-label-md text-secondary tracking-widest uppercase">Get In Touch</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary">Schedule a Consultation</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">Tell us about your legal matter. Our team will review your inquiry and get back to you within 2 business hours.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+      <!-- Contact Info -->
+      <div class="lg:col-span-2 space-y-8">
+        <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 space-y-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-secondary-container flex items-center justify-center rounded-full flex-shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container">location_on</span>
+            </div>
+            <div>
+              <p class="font-bold text-primary font-headline-md">Office Address</p>
+              <p class="text-on-surface-variant font-body-md mt-1">Jab Apartments, Suite No.3, Plot 10241, Kabuusu Lweza Road
+Seguku-Ngobe ,Opp . Ngobe Police Station<br>Entebbe, Uganda</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-secondary-container flex items-center justify-center rounded-full flex-shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container">phone</span>
+            </div>
+            <div>
+              <p class="font-bold text-primary font-headline-md">Phone</p>
+              <a href="tel:++256 393 100 347" class="text-secondary hover:underline font-body-md mt-1 block">+256 393 100 347</a>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-secondary-container flex items-center justify-center rounded-full flex-shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-container">mail</span>
+            </div>
+            <div>
+              <p class="font-bold text-primary font-headline-md">Email</p>
+              <a href="mailto:info@entebbeadvocates.com" class="text-secondary hover:underline font-body-md mt-1 block">info@entebbeadvocates.com</a>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-[#25D366]/20 flex items-center justify-center rounded-full flex-shrink-0">
+              <span class="material-symbols-outlined text-[#128C7E]">chat</span>
+            </div>
+            <div>
+              <p class="font-bold text-primary font-headline-md">WhatsApp</p>
+              <a href="https://wa.me/+256 393 100 347" target="_blank" class="text-[#128C7E] hover:underline font-body-md mt-1 block">Chat on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-primary p-8 rounded-2xl">
+          <p class="text-secondary font-label-md uppercase tracking-wider mb-2">Office Hours</p>
+          <p class="text-white font-headline-md mb-4">Mon – Fri: 8:00 AM – 6:00 PM</p>
+          <p class="text-primary-fixed-dim font-body-md">Saturday: 9:00 AM – 1:00 PM<br>Emergency legal support available 24/7.</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-3">
+        <div class="bg-white p-10 rounded-2xl border border-outline-variant/30 shadow-sm">
+          <div id="form-success" class="hidden text-center py-12 space-y-4">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <span class="material-symbols-outlined text-green-600 text-4xl" style="font-variation-settings:'FILL' 1">check_circle</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary">Message Sent!</h3>
+            <p class="text-on-surface-variant">Thank you for reaching out. We will review your inquiry and get back to you within 2 business hours.</p>
+            <button onclick="resetForm()" class="text-secondary font-bold hover:underline font-label-md">Send another message</button>
+          </div>
+          <form id="contact-form" class="space-y-6" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="font-label-md text-on-surface-variant uppercase tracking-wide text-xs" for="cf-name">Full Name *</label>
+                <input type="text" id="cf-name" name="name" required placeholder="e.g. John Mugisha" class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none">
+              </div>
+              <div class="space-y-2">
+                <label class="font-label-md text-on-surface-variant uppercase tracking-wide text-xs" for="cf-phone">Phone Number</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="+256 700 000 000" class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none">
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="font-label-md text-on-surface-variant uppercase tracking-wide text-xs" for="cf-email">Email Address *</label>
+              <input type="email" id="cf-email" name="email" required placeholder="you@example.com" class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none">
+            </div>
+            <div class="space-y-2">
+              <label class="font-label-md text-on-surface-variant uppercase tracking-wide text-xs" for="cf-area">Practice Area</label>
+              <select id="cf-area" name="practice_area" class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none bg-white">
+                <option value="">Select a practice area...</option>
+                <option>Land Law</option>
+                <option>Litigation</option>
+                <option>Corporate Law</option>
+                <option>Constitutional Law</option>
+                <option>Family Law</option>
+                <option>Taxation</option>
+                <option>Oil &amp; Gas</option>
+                <option>Intellectual Property</option>
+                <option>Real Estate</option>
+                <option>Labour Law</option>
+                <option>Immigration</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <label class="font-label-md text-on-surface-variant uppercase tracking-wide text-xs" for="cf-message">Brief Description of Your Matter *</label>
+              <textarea id="cf-message" name="message" required rows="5" placeholder="Please briefly describe your legal matter so we can direct you to the right advocate..." class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none resize-none"></textarea>
+            </div>
+            <div id="form-error" class="hidden bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 font-body-md text-sm"></div>
+            <button type="submit" id="submit-btn" class="w-full bg-primary text-on-primary py-4 px-8 rounded-lg font-label-md hover:bg-secondary transition-all active:scale-98 flex items-center justify-center gap-3">
+              <span id="btn-text">Send Message</span>
+              <span id="btn-loader" class="hidden">
+                <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 22 6.477 22 12h-4z"></path>
+                </svg>
+              </span>
+              <span class="material-symbols-outlined text-sm" id="btn-icon">send</span>
+            </button>
+            <p class="text-xs text-on-surface-variant text-center">By submitting, you agree to our privacy policy. Your information is strictly confidential.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="bg-primary text-on-primary">
+  <div class="max-w-[1280px] mx-auto px-6 py-section-padding-desktop grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="md:col-span-1 space-y-6">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwD4AlJB1B2JwhDgq5YZzcHCiXSJiZUjOhoLB-sgKlFXXDo52PEXnwYWGUvsRxk8Ern960cRzDSt0qK-CAv7vyydiXigkfgXbiK7gZkU9yrnCWdCH7uEaLTsTOhRZWohWcs65eRvuDFV00t1Dm_eVWMU-B0H4vHcMrRc7lEj5QrYbuibj9u-__QczOtshN8OzKhABra-FLcVTgNk627cyHDiPkEW1iMQ25H_aHPiwXO848wA9AodqhTkL3xw67khoxcr-_EpY0UQ" alt="Logo" class="h-20 w-auto object-contain">
+      <p class="text-primary-fixed-dim/70 font-body-md">Defining Clarity, Responsiveness, and Results since 2024. Your premier legal partner in East Africa.</p>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-secondary-fixed font-bold">Practice Areas</h5>
+      <ul class="space-y-2">
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#">Litigation</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#">Corporate Law</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#">Real Estate</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#">Family Law</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#">Oil &amp; Gas</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-secondary-fixed font-bold">Quick Links</h5>
+      <ul class="space-y-2">
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#about">About Us</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#our-team">Our Team</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#testimonials">Client Reviews</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#faq">FAQ</a></li>
+        <li><a class="text-primary-fixed-dim/70 hover:text-secondary-fixed-dim transition-colors" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-secondary-fixed font-bold">Contact Office</h5>
+      <p class="text-primary-fixed-dim/70">Jab Apartments, Suite No.3, Plot 10241, Kabuusu Lweza Road
+Seguku-Ngobe ,Opp . Ngobe Police Station<br>Entebbe, Uganda<br><a href="tel:++256 393 100 347" class="hover:text-secondary-fixed-dim transition-colors">T: +256 393 100 347</a><br><a href="mailto:info@entebbeadvocates.com" class="hover:text-secondary-fixed-dim transition-colors">info@entebbeadvocates.com</a></p>
+      <div class="flex gap-3 pt-2">
+        <a href="https://wa.me/+256 393 100 347" target="_blank" class="w-10 h-10 bg-[#25D366]/20 hover:bg-[#25D366]/40 flex items-center justify-center rounded-full transition-all">
+          <span class="material-symbols-outlined text-[#4ade80] text-sm">chat</span>
+        </a>
+        <a href="mailto:info@entebbeadvocates.com" class="w-10 h-10 bg-white/10 hover:bg-white/20 flex items-center justify-center rounded-full transition-all">
+          <span class="material-symbols-outlined text-white text-sm">mail</span>
+        </a>
+        <a href="tel:++256 393 100 347" class="w-10 h-10 bg-white/10 hover:bg-white/20 flex items-center justify-center rounded-full transition-all">
+          <span class="material-symbols-outlined text-white text-sm">call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 text-center py-6 text-sm text-primary-fixed-dim/50 px-6">
+    © <span id="footer-year"></span> Entebbe Associated Advocates. All rights reserved. Registered Law Firm, Uganda.
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════ FLOATING ACTIONS ═══════════════════════════════ -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col items-end space-y-3">
+  <a class="bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform active:scale-90 duration-200" href="https://wa.me/+256393100347" target="_blank" title="WhatsApp">
+    <span class="material-symbols-outlined">chat</span>
+  </a>
+  <a class="bg-primary text-on-primary rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform active:scale-90 duration-200" href="tel:++256 393 100 347" title="Call us">
+    <span class="material-symbols-outlined">call</span>
+  </a>
+  <button id="chat-toggle" class="bg-secondary text-on-secondary rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform active:scale-90 duration-200" title="Live chat">
+    <span class="material-symbols-outlined" id="chat-toggle-icon">forum</span>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════ AI CHAT BOX ═══════════════════════════════ -->
+<div class="hidden fixed bottom-32 right-8 w-[340px] rounded-2xl shadow-2xl z-50 overflow-hidden flex-col border border-outline-variant/20 bg-white" id="chat-box" style="max-height:520px;">
+  <!-- Header -->
+  <div class="bg-primary-container px-5 py-4 flex justify-between items-center flex-shrink-0">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-secondary/30 flex items-center justify-center">
+        <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1">gavel</span>
+      </div>
+      <div>
+        <p class="text-on-primary font-bold text-sm">Client Support</p>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-400 inline-block"></span><span class="text-primary-fixed-dim text-xs">Online now</span></span>
+      </div>
+    </div>
+    <button onclick="toggleChat()" class="text-primary-fixed-dim hover:text-white transition-colors" aria-label="Close chat">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <!-- Messages -->
+  <div class="flex-1 overflow-y-auto p-4 space-y-3 bg-[#f7f9fb]" id="chat-messages" style="max-height:320px; min-height:200px;">
+  </div>
+
+  <!-- Typing indicator -->
+  <div class="hidden px-4 pb-2 bg-[#f7f9fb]" id="typing-indicator">
+    <div class="inline-flex items-center gap-1 bg-white border border-outline-variant/30 px-3 py-2 rounded-xl rounded-tl-none">
+      <span class="typing-dot w-2 h-2 bg-on-surface-variant rounded-full block"></span>
+      <span class="typing-dot w-2 h-2 bg-on-surface-variant rounded-full block"></span>
+      <span class="typing-dot w-2 h-2 bg-on-surface-variant rounded-full block"></span>
+    </div>
+  </div>
+
+  <!-- Quick replies -->
+  <div class="px-4 py-2 bg-[#f7f9fb] flex flex-wrap gap-2" id="quick-replies"></div>
+
+  <!-- Input -->
+  <div class="px-4 py-3 border-t border-outline-variant/20 bg-white flex gap-2 flex-shrink-0">
+    <input id="chat-input" type="text" placeholder="Type a message..." class="flex-1 bg-surface-container-low border border-outline-variant/40 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-secondary transition-all font-body-md">
+    <button id="chat-send-btn" onclick="sendUserMessage()" class="w-9 h-9 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors flex-shrink-0">
+      <span class="material-symbols-outlined text-white text-sm">send</span>
+    </button>
+  </div>
+</div>
+
+<script>
+// ─── DYNAMIC YEAR ───
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+// ─── MOBILE MENU ───
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const bar1 = document.getElementById('bar1');
+const bar2 = document.getElementById('bar2');
+const bar3 = document.getElementById('bar3');
+let menuOpen = false;
+
+menuBtn.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobileMenu.classList.toggle('open', menuOpen);
+  bar1.style.transform = menuOpen ? 'translateY(8px) rotate(45deg)' : '';
+  bar2.style.opacity = menuOpen ? '0' : '1';
+  bar3.style.transform = menuOpen ? 'translateY(-8px) rotate(-45deg)' : '';
+});
+
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    menuOpen = false;
+    mobileMenu.classList.remove('open');
+    bar1.style.transform = '';
+    bar2.style.opacity = '1';
+    bar3.style.transform = '';
+  });
+});
+
+// ─── ACTIVE NAV LINK ON SCROLL ───
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id], header');
+const observerNav = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('text-secondary', 'font-bold'));
+      const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (active) { active.classList.add('text-secondary', 'font-bold'); }
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => s.id && observerNav.observe(s));
+
+// ─── SCROLL REVEAL ───
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('opacity-100', 'translate-y-0');
+      entry.target.classList.remove('opacity-0', 'translate-y-8');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('section').forEach(s => {
+  s.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+  revealObserver.observe(s);
+});
+
+// ─── STAT COUNTERS ───
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      let current = 0;
+      const step = Math.ceil(target / 40);
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + (target > 100 ? '+' : '+');
+        if (current >= target) clearInterval(timer);
+      }, 40);
+      statObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-counter[data-target]').forEach(el => statObserver.observe(el));
+
+// ─── FAQ ACCORDION ───
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const icon = btn.querySelector('.faq-icon');
+    const isOpen = !answer.classList.contains('hidden');
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+    if (!isOpen) {
+      answer.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    }
+  });
+});
+
+// ─── CONTACT FORM ───
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@entebbeadvocates.com';
+
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = this;
+  const errorBox = document.getElementById('form-error');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnLoader = document.getElementById('btn-loader');
+  const btnIcon = document.getElementById('btn-icon');
+
+  const name = document.getElementById('cf-name').value.trim();
+  const email = document.getElementById('cf-email').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+
+  errorBox.classList.add('hidden');
+  if (!name || !email || !message) {
+    errorBox.textContent = 'Please fill in all required fields (Name, Email, and Message).';
+    errorBox.classList.remove('hidden');
+    return;
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    errorBox.textContent = 'Please enter a valid email address.';
+    errorBox.classList.remove('hidden');
+    return;
+  }
+
+  submitBtn.disabled = true;
+  btnText.textContent = 'Sending...';
+  btnLoader.classList.remove('hidden');
+  btnIcon.classList.add('hidden');
+
+  try {
+    const formData = new FormData(form);
+    formData.append('_subject', 'New Legal Inquiry from Website');
+    formData.append('_captcha', 'false');
+
+    const response = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    form.classList.add('hidden');
+    document.getElementById('form-success').classList.remove('hidden');
+  } catch (err) {
+    errorBox.textContent = 'Something went wrong. Please email us directly at info@entebbeadvocates.com or call us.';
+    errorBox.classList.remove('hidden');
+    submitBtn.disabled = false;
+    btnText.textContent = 'Send Message';
+    btnLoader.classList.add('hidden');
+    btnIcon.classList.remove('hidden');
+  }
+});
+
+function resetForm() {
+  document.getElementById('contact-form').reset();
+  document.getElementById('contact-form').classList.remove('hidden');
+  document.getElementById('form-success').classList.add('hidden');
+}
+
+// ════════════════════════════════════════
+//  AI CHAT BOX
+// ════════════════════════════════════════
+const chatToggleBtn = document.getElementById('chat-toggle');
+const chatBox = document.getElementById('chat-box');
+const chatToggleIcon = document.getElementById('chat-toggle-icon');
+const messagesEl = document.getElementById('chat-messages');
+const typingEl = document.getElementById('typing-indicator');
+const quickRepliesEl = document.getElementById('quick-replies');
+const chatInput = document.getElementById('chat-input');
+let chatOpened = false;
+
+const GREETINGS = ['hi', 'hello', 'hey', 'good morning', 'good afternoon', 'good evening', 'helo', 'hii', 'howdy', 'sup'];
+const WHATSAPP_NUMBER = '+256 393 100 347';
+const FIRM_EMAIL = 'info@entebbeadvocates.com';
+
+const CHAT_FLOWS = {
+  start: {
+    bot: "Hello! 👋 Welcome to Entebbe Associated Advocates. I'm here to help. What brings you to us today?",
+    replies: [
+      { label: "Schedule a consultation", next: "consultation" },
+      { label: "Learn about practice areas", next: "practice" },
+      { label: "Ask about fees", next: "fees" },
+      { label: "Get office contact info", next: "contact" }
+    ]
+  },
+  consultation: {
+    bot: "Great! Scheduling a consultation is simple. How would you prefer to book?",
+    replies: [
+      { label: "Fill the contact form", next: "form_redirect" },
+      { label: "Call the office", next: "call_info" },
+      { label: "WhatsApp us", next: "whatsapp_redirect" }
+    ]
+  },
+  practice: {
+    bot: "We cover 11 specialised practice areas. Which field is most relevant to your matter?",
+    replies: [
+      { label: "Land Law / Real Estate", next: "land_info" },
+      { label: "Corporate / Business Law", next: "corp_info" },
+      { label: "Family Law", next: "family_info" },
+      { label: "Other practice area", next: "other_practice" }
+    ]
+  },
+  fees: {
+    bot: "Our fees are transparent and discussed upfront before any work begins. Fees vary by the nature and complexity of the matter — fixed rates for standard transactions, hourly for complex litigation. Shall I help you book a free initial call to discuss your matter?",
+    replies: [
+      { label: "Yes, book a consultation", next: "consultation" },
+      { label: "Speak to someone now", next: "whatsapp_redirect" }
+    ]
+  },
+  contact: {
+    bot: "Here are our contact details:\n📍 Jab Apartments, Suite No.3, Plot 10241, Kabuusu Lweza Road\nSeguku-Ngobe ,Opp . Ngobe Police Station\nEntebbe, Uganda\n📞 +256 393 100 347\n✉️ info@entebbeadvocates.com\n\nOffice hours: Mon–Fri 8am–6pm, Sat 9am–1pm.",
+    replies: [
+      { label: "WhatsApp the team", next: "whatsapp_redirect" },
+      { label: "Send an email", next: "email_redirect" }
+    ]
+  },
+  land_info: {
+    bot: "Our Land Law team handles title searches, land disputes, conveyancing, and recovery of encumbered properties. Robert Mugisha personally leads this practice. Would you like to speak with him?",
+    replies: [
+      { label: "Yes, contact Robert", next: "whatsapp_redirect" },
+      { label: "Fill a contact form", next: "form_redirect" }
+    ]
+  },
+  corp_info: {
+    bot: "Our Corporate Law team advises on company registration, M&A, compliance, contract drafting, and regulatory matters — including Oil & Gas. John Bosco leads this department. Shall I connect you?",
+    replies: [
+      { label: "Yes, contact John's team", next: "whatsapp_redirect" },
+      { label: "Fill a contact form", next: "form_redirect" }
+    ]
+  },
+  family_info: {
+    bot: "Our Family Law team handles divorce, child custody, adoption, inheritance, and estate planning with sensitivity and discretion. Sarah Namatovu leads this practice.",
+    replies: [
+      { label: "Contact Sarah's team", next: "whatsapp_redirect" },
+      { label: "Fill a contact form", next: "form_redirect" }
+    ]
+  },
+  other_practice: {
+    bot: "We also cover Constitutional Law, Taxation, Intellectual Property, Immigration, and Labour Law. For the best direction, please reach us directly — our team will match you to the right advocate.",
+    replies: [
+      { label: "WhatsApp us", next: "whatsapp_redirect" },
+      { label: "Send an email", next: "email_redirect" },
+      { label: "Fill a contact form", next: "form_redirect" }
+    ]
+  },
+  call_info: {
+    bot: "You can reach us at 📞 +256 393 100 347 during office hours (Mon–Fri 8am–6pm, Sat 9am–1pm). For urgent matters outside office hours, our WhatsApp is monitored.",
+    replies: [
+      { label: "Message on WhatsApp", next: "whatsapp_redirect" }
+    ]
+  },
+  form_redirect: {
+    bot: "You can use our consultation form right here on the page. Scroll down to the 'Schedule a Consultation' section — we typically respond within 2 business hours! ✅",
+    replies: [
+      { label: "Scroll to form", action: "scroll_form" },
+      { label: "Chat with us on WhatsApp", next: "whatsapp_redirect" }
+    ]
+  },
+  whatsapp_redirect: {
+    bot: "You'll be redirected to our WhatsApp. One of our team will respond promptly. See you there! 🟢",
+    replies: [],
+    action: () => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20legal%20services.`, '_blank')
+  },
+  email_redirect: {
+    bot: `You can email us directly at ${FIRM_EMAIL}. Please include a brief description of your matter and we'll get back to you shortly. 📧`,
+    replies: [
+      { label: "Open email client", action: `mailto:${FIRM_EMAIL}` }
+    ]
+  },
+  fallback: {
+    bot: `Thank you for your message! For specific inquiries beyond what I can help with here, please reach out to our team directly:\n\n💬 WhatsApp: wa.me/${WHATSAPP_NUMBER}\n📧 Email: ${FIRM_EMAIL}\n\nWe're happy to assist!`,
+    replies: [
+      { label: "WhatsApp the team", next: "whatsapp_redirect" },
+      { label: "Send an email", next: "email_redirect" }
+    ]
+  }
+};
+
+function appendBotMessage(text) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg-bot px-4 py-3 text-sm text-on-surface font-body-md max-w-[90%] chat-bubble-in';
+  div.style.whiteSpace = 'pre-line';
+  div.textContent = text;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function appendUserMessage(text) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg-user px-4 py-3 text-sm font-body-md max-w-[85%] chat-bubble-in';
+  div.textContent = text;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function showTyping() {
+  typingEl.classList.remove('hidden');
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+function hideTyping() { typingEl.classList.add('hidden'); }
+
+function renderQuickReplies(replies) {
+  quickRepliesEl.innerHTML = '';
+  replies.forEach(r => {
+    const btn = document.createElement('button');
+    btn.textContent = r.label;
+    btn.className = 'text-xs border border-secondary text-secondary px-3 py-1.5 rounded-full hover:bg-secondary hover:text-white transition-all font-label-sm';
+    btn.addEventListener('click', () => {
+      appendUserMessage(r.label);
+      quickRepliesEl.innerHTML = '';
+      if (r.action && typeof r.action === 'string') {
+        if (r.action === 'scroll_form') {
+          document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+          toggleChat();
+        } else {
+          window.location.href = r.action;
+        }
+      } else if (r.next) {
+        handleFlow(r.next);
+      }
+    });
+    quickRepliesEl.appendChild(btn);
+  });
+}
+
+function handleFlow(key) {
+  const flow = CHAT_FLOWS[key] || CHAT_FLOWS.fallback;
+  showTyping();
+  setTimeout(() => {
+    hideTyping();
+    appendBotMessage(flow.bot);
+    if (flow.action && typeof flow.action === 'function') setTimeout(flow.action, 600);
+    if (flow.replies && flow.replies.length) renderQuickReplies(flow.replies);
+  }, 900);
+}
+
+function isGreeting(text) {
+  return GREETINGS.some(g => text.toLowerCase().trim().startsWith(g));
+}
+
+function sendUserMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+  chatInput.value = '';
+  appendUserMessage(text);
+  quickRepliesEl.innerHTML = '';
+
+  if (isGreeting(text)) {
+    showTyping();
+    setTimeout(() => {
+      hideTyping();
+      const greetReply = "Hey there! Great to have you here 😊 How can we assist you today?";
+      appendBotMessage(greetReply);
+      renderQuickReplies(CHAT_FLOWS.start.replies);
+    }, 700);
+  } else {
+    handleFlow('fallback');
+  }
+}
+
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendUserMessage(); });
+
+function toggleChat() {
+  const isHidden = chatBox.classList.contains('hidden');
+  if (isHidden) {
+    chatBox.classList.remove('hidden');
+    chatBox.classList.add('flex');
+    chatToggleIcon.textContent = 'close';
+    if (!chatOpened) {
+      chatOpened = true;
+      showTyping();
+      setTimeout(() => {
+        hideTyping();
+        appendBotMessage(CHAT_FLOWS.start.bot);
+        renderQuickReplies(CHAT_FLOWS.start.replies);
+      }, 800);
+    }
+  } else {
+    chatBox.classList.add('hidden');
+    chatBox.classList.remove('flex');
+    chatToggleIcon.textContent = 'forum';
+  }
+}
+
+// ════════════════════════════════════════
+//  TEAM SLIDER
+// ════════════════════════════════════════
+(function() {
+  const track = document.getElementById('team-track');
+  const slides = track ? track.querySelectorAll('.team-slide') : [];
+  const dots = document.querySelectorAll('#team-dots .team-dot');
+  const thumbs = document.querySelectorAll('#team-thumbs .team-thumb');
+  const progressFill = document.getElementById('team-progress');
+  const currentEl = document.getElementById('team-current');
+  const totalEl = document.getElementById('team-total');
+  if (!track || !slides.length) return;
+
+  let current = 0;
+  const total = slides.length;
+  if (totalEl) totalEl.textContent = String(total).padStart(2, '0');
+  const interval = 6000;
+  let elapsed = 0;
+  let rafId, timer;
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    // Update thumbnail strip
+    thumbs.forEach((t, i) => {
+      const isActive = i === current;
+      t.style.borderColor = isActive ? 'rgba(123,88,0,0.6)' : 'rgba(255,255,255,0.1)';
+      t.style.background = isActive ? 'rgba(123,88,0,0.1)' : 'rgba(255,255,255,0.05)';
+      const nameEl = t.querySelector('span');
+      if (nameEl) nameEl.style.color = isActive ? 'white' : 'rgba(176,200,235,0.7)';
+    });
+    if (currentEl) currentEl.textContent = String(current + 1).padStart(2, '0');
+    resetProgress();
+  }
+
+  function resetProgress() {
+    elapsed = 0;
+    if (progressFill) progressFill.style.width = '0%';
+  }
+
+  function animateProgress(ts) {
+    if (!elapsed) elapsed = ts;
+    const pct = Math.min(((ts - elapsed) / interval) * 100, 100);
+    if (progressFill) progressFill.style.width = pct + '%';
+    if (pct < 100) { rafId = requestAnimationFrame(animateProgress); }
+  }
+
+  function startAuto() {
+    cancelAnimationFrame(rafId);
+    elapsed = 0;
+    rafId = requestAnimationFrame(animateProgress);
+    clearInterval(timer);
+    timer = setInterval(() => { goTo(current + 1); startAuto(); }, interval);
+  }
+
+  document.getElementById('team-prev')?.addEventListener('click', () => { clearInterval(timer); cancelAnimationFrame(rafId); goTo(current - 1); startAuto(); });
+  document.getElementById('team-next')?.addEventListener('click', () => { clearInterval(timer); cancelAnimationFrame(rafId); goTo(current + 1); startAuto(); });
+  dots.forEach(d => d.addEventListener('click', () => { clearInterval(timer); cancelAnimationFrame(rafId); goTo(parseInt(d.dataset.index)); startAuto(); }));
+  thumbs.forEach(t => t.addEventListener('click', () => { clearInterval(timer); cancelAnimationFrame(rafId); goTo(parseInt(t.dataset.thumb)); startAuto(); }));
+
+  goTo(0);
+  startAuto();
+})();
+
+// ════════════════════════════════════════
+//  TESTIMONIAL SLIDER
+// ════════════════════════════════════════
+(function() {
+  const track = document.getElementById('testi-track');
+  const dots = document.querySelectorAll('#testi-dots .testi-dot');
+  if (!track) return;
+
+  let current = 0;
+  const total = track.querySelectorAll('.testi-slide').length;
+  let timer;
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 7000);
+  }
+
+  document.getElementById('testi-prev')?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+  document.getElementById('testi-next')?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.index)); startAuto(); }));
+
+  goTo(0);
+  startAuto();
+})();
+
+chatToggleBtn.addEventListener('click', toggleChat);
+</script>
+</body>
 </html>
