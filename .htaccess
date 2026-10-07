@@ -1,4 +1,0 @@
-RewriteEngine On
-
-# Send the friendly site URL to Hostinger Webmail.
-RewriteRule ^webmail/?$ https://mail.hostinger.com/ [R=302,L,NE]
